@@ -1,0 +1,18 @@
+[workspace]
+name = "polars-xxhash"
+version = "0.1.0"
+description = "polars plugin for xxhash stable hashing"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = ">=3.12"
+polars = "1.38.*" # pinned — rust plugin abi must match
+rust = ">=1.75"
+maturin = ">=1.0"
+compilers = "*"
+pip = "*"
+
+[tasks]
+build = "maturin build --release -o dist/"
+dev = "maturin develop --release"
